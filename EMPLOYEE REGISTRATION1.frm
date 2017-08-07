@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Begin VB.Form Form3 
+Begin VB.Form EMPREGISTRATION 
    BackColor       =   &H00FF8080&
    Caption         =   "EMPLOYEE REGISTRATION"
    ClientHeight    =   3090
@@ -11,355 +11,954 @@ Begin VB.Form Form3
    ScaleHeight     =   9435
    ScaleWidth      =   20370
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton Command5 
-      Caption         =   "Command5"
+   Begin VB.CommandButton UPLOAD 
+      Caption         =   "UPLOAD"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   12960
+      TabIndex        =   21
+      ToolTipText     =   "UPLOAD PHOTO"
+      Top             =   3480
+      Width           =   2415
+   End
+   Begin VB.Frame Frame5 
+      BackColor       =   &H00FF8080&
+      Caption         =   "SEARCH"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   4575
+      Left            =   11640
+      TabIndex        =   49
+      Top             =   4200
+      Width           =   5175
+      Begin VB.TextBox Text11 
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2160
+         TabIndex        =   23
+         ToolTipText     =   "FIELD"
+         Top             =   600
+         Width           =   2535
+      End
+      Begin VB.CommandButton SEARCH 
+         Caption         =   "SEARCH"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   735
+         Left            =   1440
+         TabIndex        =   25
+         Top             =   2880
+         Width           =   2055
+      End
+      Begin VB.TextBox Text12 
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2160
+         TabIndex        =   24
+         ToolTipText     =   "SEARCH"
+         Top             =   1560
+         Width           =   2535
+      End
+      Begin VB.Label Label20 
+         BackStyle       =   0  'Transparent
+         Caption         =   "SEARCH TYPE"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
+         Left            =   240
+         TabIndex        =   51
+         Top             =   1680
+         Width           =   1695
+      End
+      Begin VB.Label Label19 
+         BackStyle       =   0  'Transparent
+         Caption         =   "FIELD"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
+         Left            =   240
+         TabIndex        =   50
+         Top             =   720
+         Width           =   1335
+      End
+   End
+   Begin VB.CommandButton EDIT 
+      Caption         =   "EDIT"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   13440
-      TabIndex        =   42
-      Top             =   8520
-      Width           =   1935
+      Left            =   17040
+      TabIndex        =   28
+      Top             =   8040
+      Width           =   1695
    End
    Begin VB.CommandButton CANCEL 
       Caption         =   "CANCEL"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   13560
-      TabIndex        =   41
-      Top             =   7440
+      Left            =   17040
+      TabIndex        =   27
+      Top             =   7080
       Width           =   1695
    End
    Begin VB.CommandButton SAVE 
       Caption         =   "SAVE"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   13440
-      TabIndex        =   40
-      Top             =   6360
+      Left            =   17040
+      TabIndex        =   22
+      Top             =   6000
       Width           =   1695
    End
    Begin VB.CommandButton DELETE 
       Caption         =   "DELETE"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   13320
-      TabIndex        =   39
-      Top             =   5400
-      Width           =   1815
+      Left            =   17040
+      TabIndex        =   26
+      Top             =   5040
+      Width           =   1695
    End
    Begin VB.CommandButton INSERT 
       Caption         =   "INSERT"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   13320
-      TabIndex        =   38
-      Top             =   4440
+      Left            =   17040
+      TabIndex        =   1
+      Top             =   4080
       Width           =   1695
    End
    Begin VB.Frame Frame3 
       BackColor       =   &H00FF8080&
-      Caption         =   "Frame3"
-      Height          =   3975
-      Left            =   360
-      TabIndex        =   3
-      Top             =   6600
-      Width           =   5415
+      Caption         =   "JOB INFO"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   3615
+      Left            =   0
+      TabIndex        =   31
+      Top             =   5160
+      Width           =   5775
+      Begin VB.TextBox Text9 
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   17
+         ToolTipText     =   "EMP ID"
+         Top             =   600
+         Width           =   2775
+      End
       Begin MSComCtl2.DTPicker DTPicker2 
          Height          =   495
-         Left            =   2760
-         TabIndex        =   37
-         Top             =   2160
-         Width           =   2175
-         _ExtentX        =   3836
+         Left            =   2280
+         TabIndex        =   19
+         ToolTipText     =   "DATE OF JOIN"
+         Top             =   2040
+         Width           =   2775
+         _ExtentX        =   4895
          _ExtentY        =   873
          _Version        =   393216
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Format          =   16515073
          CurrentDate     =   42953
       End
       Begin VB.ComboBox Combo4 
-         Height          =   315
-         Left            =   2760
-         TabIndex        =   36
-         Text            =   "Combo4"
-         Top             =   1440
-         Width           =   2055
-      End
-      Begin VB.TextBox Text11 
-         Height          =   495
-         Left            =   2760
-         TabIndex        =   35
-         Text            =   "Text11"
-         Top             =   3000
-         Width           =   2055
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   360
+         ItemData        =   "EMPLOYEE REGISTRATION1.frx":0000
+         Left            =   2280
+         List            =   "EMPLOYEE REGISTRATION1.frx":0016
+         TabIndex        =   18
+         ToolTipText     =   "DESIGNATION"
+         Top             =   1320
+         Width           =   2775
       End
       Begin VB.TextBox Text10 
-         Height          =   615
-         Left            =   2640
-         TabIndex        =   34
-         Text            =   "Text10"
-         Top             =   480
-         Width           =   2175
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   20
+         ToolTipText     =   "SALARY"
+         Top             =   2760
+         Width           =   2775
       End
       Begin VB.Label Label18 
+         BackStyle       =   0  'Transparent
          Caption         =   "SALARY"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
          Height          =   495
-         Left            =   240
-         TabIndex        =   33
-         Top             =   3000
+         Left            =   120
+         TabIndex        =   48
+         Top             =   2760
          Width           =   1935
       End
       Begin VB.Label Label17 
+         BackStyle       =   0  'Transparent
          Caption         =   "DATE OF JOIN"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   32
-         Top             =   2160
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   120
+         TabIndex        =   47
+         Top             =   2040
          Width           =   1935
       End
       Begin VB.Label Label16 
+         BackStyle       =   0  'Transparent
          Caption         =   "DESIGNATION"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   31
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   120
+         TabIndex        =   46
          Top             =   1320
          Width           =   1935
       End
       Begin VB.Label Label15 
+         BackStyle       =   0  'Transparent
          Caption         =   "EMPLOYEE ID"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   30
-         Top             =   480
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   120
+         TabIndex        =   45
+         Top             =   600
          Width           =   1935
       End
    End
    Begin VB.Frame Frame2 
       BackColor       =   &H00FF8080&
-      Caption         =   "Frame2"
+      Caption         =   "CONTACT INFO"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   7575
-      Left            =   6240
-      TabIndex        =   2
-      Top             =   960
+      Left            =   5880
+      TabIndex        =   30
+      Top             =   1200
       Width           =   5655
+      Begin VB.TextBox Text3 
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   8
+         ToolTipText     =   "HOUSE NAME"
+         Top             =   600
+         Width           =   3255
+      End
       Begin VB.ComboBox Combo3 
-         Height          =   315
-         Left            =   2760
-         TabIndex        =   29
-         Text            =   "Combo3"
-         Top             =   5160
-         Width           =   2295
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   360
+         Left            =   2280
+         TabIndex        =   14
+         ToolTipText     =   "COUNTRY"
+         Top             =   5040
+         Width           =   2535
       End
       Begin VB.ComboBox Combo2 
-         Height          =   315
-         Left            =   2760
-         TabIndex        =   28
-         Text            =   "Combo2"
-         Top             =   4440
-         Width           =   2175
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   360
+         Left            =   2280
+         TabIndex        =   13
+         ToolTipText     =   "STATE"
+         Top             =   4320
+         Width           =   2535
       End
       Begin VB.ComboBox Combo1 
-         Height          =   315
-         Left            =   2760
-         TabIndex        =   27
-         Text            =   "Combo1"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   360
+         Left            =   2280
+         TabIndex        =   12
+         ToolTipText     =   "DISTRICT"
          Top             =   3600
-         Width           =   2175
-      End
-      Begin VB.TextBox Text9 
-         Height          =   615
-         Left            =   2640
-         TabIndex        =   26
-         Text            =   "Text9"
-         Top             =   6600
-         Width           =   2175
+         Width           =   2535
       End
       Begin VB.TextBox Text8 
-         Height          =   615
-         Left            =   2640
-         TabIndex        =   25
-         Text            =   "Text8"
-         Top             =   5760
-         Width           =   2175
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   16
+         ToolTipText     =   "EMAIL"
+         Top             =   6480
+         Width           =   3255
       End
       Begin VB.TextBox Text7 
-         Height          =   615
-         Left            =   2640
-         TabIndex        =   24
-         Text            =   "Text7"
-         Top             =   2760
-         Width           =   2295
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   15
+         ToolTipText     =   "CONTACT NO"
+         Top             =   5760
+         Width           =   2535
       End
       Begin VB.TextBox Text6 
-         Height          =   615
-         Left            =   2640
-         TabIndex        =   23
-         Text            =   "Text6"
-         Top             =   1920
-         Width           =   2175
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   11
+         ToolTipText     =   "PINCODE"
+         Top             =   2760
+         Width           =   2535
       End
       Begin VB.TextBox Text5 
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
          Height          =   495
-         Left            =   2640
-         TabIndex        =   22
-         Text            =   "Text5"
-         Top             =   1200
-         Width           =   2175
+         Left            =   2280
+         TabIndex        =   10
+         ToolTipText     =   "POST OFFICE"
+         Top             =   2040
+         Width           =   3255
       End
       Begin VB.TextBox Text4 
-         Height          =   615
-         Left            =   2640
-         TabIndex        =   21
-         Text            =   "Text4"
-         Top             =   360
-         Width           =   2175
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   9
+         ToolTipText     =   "CITY"
+         Top             =   1320
+         Width           =   3255
       End
       Begin VB.Label Label14 
+         BackStyle       =   0  'Transparent
          Caption         =   "EMAIL ID"
-         Height          =   615
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
          Left            =   240
-         TabIndex        =   20
-         Top             =   6600
-         Width           =   1935
+         TabIndex        =   44
+         Top             =   6480
+         Width           =   1815
       End
       Begin VB.Label Label13 
+         BackStyle       =   0  'Transparent
          Caption         =   "CONTACT NO"
-         Height          =   615
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
          Left            =   240
-         TabIndex        =   19
-         Top             =   5880
+         TabIndex        =   43
+         Top             =   5760
          Width           =   1815
       End
       Begin VB.Label Label12 
+         BackStyle       =   0  'Transparent
          Caption         =   "COUNTRY"
-         Height          =   615
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
          Left            =   240
-         TabIndex        =   18
+         TabIndex        =   42
          Top             =   5040
-         Width           =   1935
+         Width           =   1815
       End
       Begin VB.Label Label11 
+         BackStyle       =   0  'Transparent
          Caption         =   "STATE"
-         Height          =   615
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
          Left            =   240
-         TabIndex        =   17
+         TabIndex        =   41
          Top             =   4320
-         Width           =   1935
+         Width           =   1815
       End
       Begin VB.Label Label10 
+         BackStyle       =   0  'Transparent
          Caption         =   "DISTRICT"
-         Height          =   615
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
          Left            =   240
-         TabIndex        =   16
+         TabIndex        =   40
          Top             =   3600
-         Width           =   1935
+         Width           =   1815
       End
       Begin VB.Label Label9 
+         BackStyle       =   0  'Transparent
          Caption         =   "PIN CODE"
-         Height          =   615
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
          Left            =   240
-         TabIndex        =   15
-         Top             =   2760
-         Width           =   1935
+         TabIndex        =   39
+         Top             =   2880
+         Width           =   1815
       End
       Begin VB.Label Label8 
+         BackStyle       =   0  'Transparent
          Caption         =   "POST OFFICE"
-         Height          =   615
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
          Left            =   240
-         TabIndex        =   14
-         Top             =   1920
-         Width           =   1935
+         TabIndex        =   38
+         Top             =   2160
+         Width           =   1815
       End
       Begin VB.Label Label7 
+         BackStyle       =   0  'Transparent
          Caption         =   "CITY NAME"
-         Height          =   615
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
          Left            =   240
-         TabIndex        =   13
-         Top             =   1080
-         Width           =   1935
+         TabIndex        =   37
+         Top             =   1440
+         Width           =   1815
       End
       Begin VB.Label Label6 
+         BackStyle       =   0  'Transparent
          Caption         =   "HOUSE NAME"
-         Height          =   615
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
          Left            =   240
-         TabIndex        =   12
-         Top             =   360
-         Width           =   1935
+         TabIndex        =   36
+         Top             =   720
+         Width           =   1815
       End
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00FF8080&
-      Caption         =   "Frame1"
-      Height          =   4695
-      Left            =   240
-      TabIndex        =   1
-      Top             =   1680
+      Caption         =   "PERSONNEL INFO"
+      BeginProperty Font 
+         Name            =   "MS Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000000&
+      Height          =   3855
+      Left            =   0
+      TabIndex        =   29
+      Top             =   1200
       Width           =   5775
-      Begin VB.TextBox Text3 
-         Height          =   615
-         Left            =   2640
-         TabIndex        =   11
-         Top             =   3120
-         Width           =   1935
+      Begin VB.OptionButton Option3 
+         Caption         =   "OTHERS"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   4560
+         TabIndex        =   6
+         Top             =   2160
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option2 
+         Caption         =   "MALE"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   3480
+         TabIndex        =   5
+         Top             =   2160
+         Width           =   975
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "FEMALE"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   4
+         ToolTipText     =   "GENDER"
+         Top             =   2160
+         Width           =   1095
       End
       Begin MSComCtl2.DTPicker DTPicker1 
-         Height          =   615
-         Left            =   2640
-         TabIndex        =   8
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   3
+         ToolTipText     =   "DOB"
          Top             =   1320
-         Width           =   2175
-         _ExtentX        =   3836
-         _ExtentY        =   1085
+         Width           =   2655
+         _ExtentX        =   4683
+         _ExtentY        =   873
          _Version        =   393216
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Format          =   16515073
          CurrentDate     =   42953
       End
       Begin VB.TextBox Text2 
-         Height          =   615
-         Left            =   2640
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
          TabIndex        =   7
-         Top             =   2160
-         Width           =   2055
+         ToolTipText     =   "ADHAR"
+         Top             =   3120
+         Width           =   2775
       End
       Begin VB.TextBox Text1 
-         Height          =   615
-         Left            =   2640
-         TabIndex        =   5
-         Top             =   480
-         Width           =   2175
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   2280
+         TabIndex        =   2
+         ToolTipText     =   "EMP NAME"
+         Top             =   600
+         Width           =   3375
       End
       Begin VB.Label Label5 
+         BackStyle       =   0  'Transparent
          Caption         =   "ADHAR NUMBER"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   10
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   120
+         TabIndex        =   35
          Top             =   3120
          Width           =   1935
       End
       Begin VB.Label Label4 
+         BackStyle       =   0  'Transparent
          Caption         =   "GENDER"
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
          Height          =   495
-         Left            =   240
-         TabIndex        =   9
+         Left            =   120
+         TabIndex        =   34
          Top             =   2280
-         Width           =   1935
+         Width           =   1215
       End
       Begin VB.Label Label3 
+         BackStyle       =   0  'Transparent
          Caption         =   "DOB"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   6
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   495
+         Left            =   120
+         TabIndex        =   33
          Top             =   1320
-         Width           =   1815
+         Width           =   1095
       End
       Begin VB.Label Label2 
+         BackStyle       =   0  'Transparent
          Caption         =   "EMPLOYEE NAME"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   4
-         Top             =   480
-         Width           =   1815
+         BeginProperty Font 
+            Name            =   "MS Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00800000&
+         Height          =   375
+         Left            =   120
+         TabIndex        =   32
+         Top             =   720
+         Width           =   1935
       End
    End
    Begin VB.Image Image1 
       Height          =   2055
-      Left            =   12960
-      Top             =   120
-      Width           =   1695
+      Left            =   13200
+      Top             =   1320
+      Width           =   1815
    End
    Begin VB.Label Label1 
       Alignment       =   2  'Center
@@ -367,7 +966,7 @@ Begin VB.Form Form3
       BackStyle       =   0  'Transparent
       Caption         =   "EMPLOYEE REGISTRATION"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "MS Serif"
          Size            =   24
          Charset         =   0
          Weight          =   700
@@ -375,14 +974,15 @@ Begin VB.Form Form3
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00800000&
       Height          =   735
       Left            =   3240
       TabIndex        =   0
       Top             =   240
-      Width           =   8295
+      Width           =   8175
    End
 End
-Attribute VB_Name = "Form3"
+Attribute VB_Name = "EMPREGISTRATION"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -409,20 +1009,21 @@ Private Sub Form_Load()
 SAVE.Enabled = False
 CANCEL.Enabled = False
 DELETE.Enabled = False
-edit.Enabled = False
+EDIT.Enabled = False
 INSERT.Enabled = True
 C = 0
 connect
 query = "SELECT     emp_name, DOB, gender, emp_desig, salary FROM         employee"
 FILLGRID
 End Sub
+
 Private Sub insert_Click()
 Frame1.Enabled = True
 Frame2.Enabled = True
 Frame3.Enabled = True
 SAVE.Enabled = True
 CANCEL.Enabled = True
-edit.Enabled = False
+EDIT.Enabled = False
 DELETE.Enabled = False
 End Sub
 
