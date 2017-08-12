@@ -1,0 +1,1 @@
+SELECT     emp_name, DOB, gender, emp_desig, salary FROM employee
